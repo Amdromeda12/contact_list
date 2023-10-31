@@ -1,4 +1,6 @@
-﻿namespace dtp6_contacts
+﻿using System.Threading.Channels;
+
+namespace dtp6_contacts
 {
     class MainClass
     {
@@ -9,11 +11,15 @@
         }
         public static void Main(string[] args)
         {
+            
             string lastFileName = "address.lis";
             string[] commandLine;
             newHelp();
             do
             {
+                Console.WriteLine("Gaming");
+                Console.WriteLine("Gaming");
+                Console.WriteLine("Gaming");
                 commandLine = input($">").Split(' ');
                 if (commandLine[0] == "quit")
                 {
@@ -64,7 +70,7 @@
                 }
             } while (commandLine[0] != "quit");
         }
-
+        
         private static void WriteContactToFile(string lastFileName)
         {
             using (StreamWriter outfile = new StreamWriter(lastFileName))
