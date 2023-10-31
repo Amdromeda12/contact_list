@@ -28,9 +28,6 @@ namespace dtp6_contacts
             newHelp();
             do
             {
-                Console.WriteLine("Gaming");
-                Console.WriteLine("Gaming");
-                Console.WriteLine("Gaming");
                 commandLine = input($">").Split(' ');
                 if (commandLine[0] == "quit")
                 {
