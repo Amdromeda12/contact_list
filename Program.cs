@@ -2,6 +2,11 @@
 {
     class MainClass
     {
+        static string input(string prompt)
+        {
+            Console.WriteLine(prompt);
+            return Console.ReadLine();
+        }
         private static void newHelp()
         {
             Console.WriteLine("Avaliable commands: ");
@@ -29,8 +34,7 @@
             newHelp();
             do
             {
-                Console.Write($"> ");
-                commandLine = Console.ReadLine().Split(' ');
+                commandLine = input($">").Split(' ');
                 if (commandLine[0] == "quit")
                 {
                     // NYI!
@@ -110,20 +114,17 @@
                     }
                     else
                     {
-                        // NYI!
-                        Console.WriteLine("Not yet implemented: save /file/");
+                        // NYI: Not yet implemented: save /file/
                     }
                 }
                 else if (commandLine[0] == "new")
                 {
                     if (commandLine.Length < 2)
                     {
-                        Console.Write("personal name: ");
-                        string persname = Console.ReadLine();
-                        Console.Write("surname: ");
-                        string surname = Console.ReadLine();
-                        Console.Write("phone: ");
-                        string phone = Console.ReadLine();
+                        string persname = input("personal name: ");
+                        string surname = input("surname: ");
+                        string phone = input("phone: ");
+                        // NYI:skapa människa här och lägg in i phone listan
                     }
                     else
                     {
