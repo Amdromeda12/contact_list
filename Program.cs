@@ -32,18 +32,13 @@
                 {
                     if (commandLine.Length < 2)
                     {
-                        using (StreamWriter outfile = new StreamWriter(lastFileName))
-                        {
-                            foreach (Person p in contactList)
-                            {
-                                if (p != null)
-                                    outfile.WriteLine($"{p.persname};{p.surname};{p.phone};{p.address};{p.birthdate}");
-                            }
-                        }
+                        WriteContactToFile(lastFileName);
                     }
                     else
                     {
                         // NYI: Not yet implemented: save /file/
+                        lastFileName = commandLine[1];
+                        WriteContactToFile(lastFileName);
                     }
                 }
                 else if (commandLine[0] == "new")
@@ -68,6 +63,18 @@
                     Console.WriteLine($"Unknown command: '{commandLine[0]}'");
                 }
             } while (commandLine[0] != "quit");
+        }
+
+        private static void WriteContactToFile(string lastFileName)
+        {
+            using (StreamWriter outfile = new StreamWriter(lastFileName))
+            {
+                foreach (Person p in contactList)
+                {
+                    if (p != null)
+                        outfile.WriteLine($"{p.persname};{p.surname};{p.phone};{p.address};{p.birthdate}");
+                }
+            }
         }
 
         private static void ReadContactListFromFile(string lastFileName)
