@@ -9,6 +9,17 @@ namespace dtp6_contacts
         {
             public string persname, surname, phone, address, birthdate;
         }
+        static void WriteContactList()
+        {
+            for (int i = 0; i < contactList.Length; i++)
+            {
+                Person p = contactList[i];
+                if (p != null)
+                {
+                    Console.WriteLine($"{p.persname}, {p.surname}, {p.phone}, {p.address}, {p.birthdate}");
+                }
+            }
+        }
         public static void Main(string[] args)
         {
             
@@ -25,6 +36,10 @@ namespace dtp6_contacts
                 {
                     // NYI!
                     Console.WriteLine("Not yet implemented: safe quit");
+                }
+                if (commandLine[0] == "list")
+                {
+                    WriteContactList();
                 }
                 else if (commandLine[0] == "load")
                 {
