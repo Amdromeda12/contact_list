@@ -20,6 +20,7 @@
             Console.WriteLine("  quit        - quit the program");
             Console.WriteLine("  save         - save contact list data to the file previously loaded");
             Console.WriteLine("  save /file/ - save contact list data to the file");
+            Console.WriteLine("XXXX");
             Console.WriteLine();
             do
             {
